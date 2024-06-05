@@ -2,6 +2,7 @@
 import streamlit as st
 from experiment_helper import display_single_example, save_annotation
 import csv
+import random
 
 
 
@@ -9,7 +10,7 @@ def csv_to_format():
     data_array = []
 
     # Open the CSV file containing your data
-    with open('your_dataset.csv', newline='', encoding='utf-8') as csvfile:
+    with open('just_translations.csv', newline='', encoding='utf-8') as csvfile:
         # Create a CSV reader object
         reader = csv.DictReader(csvfile)
 
@@ -18,17 +19,20 @@ def csv_to_format():
             # Each row is a dictionary with keys as column headers
             # Append a new dictionary to the list with the required keys
             data_array.append({
-                'input': row['input_column_name'],
-                'output': row['output_column_name'],
-                'gold': row['gold_column_name']
+                'input': row['sentence_text'],
+                'output': row['model_translations'],
+                'gold': row['gold']
             })
+    random.shuffle(data_array)
+    return data_array
 
 
 def load_all_test_data():
     st.session_state.test_sample_index = 0
-    sample_1 = {'input': 'I am a teacher', 'output': 'אני מורה', 'gold': 'אני מורה'}
-    return [sample_1]
-
+    #sample_1 = {'input': 'I am a teacher', 'output': 'אני מורה', 'gold': 'אני מורה'}
+    data = csv_to_format()
+    #return [sample_1]
+    return data
 
 def next_page():
     st.session_state.cur_page = 'after'
