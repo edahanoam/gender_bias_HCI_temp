@@ -1,6 +1,27 @@
 
 import streamlit as st
 from experiment_helper import display_single_example, save_annotation
+import csv
+
+
+
+def csv_to_format():
+    data_array = []
+
+    # Open the CSV file containing your data
+    with open('your_dataset.csv', newline='', encoding='utf-8') as csvfile:
+        # Create a CSV reader object
+        reader = csv.DictReader(csvfile)
+
+        # Loop through rows in the CSV file
+        for row in reader:
+            # Each row is a dictionary with keys as column headers
+            # Append a new dictionary to the list with the required keys
+            data_array.append({
+                'input': row['input_column_name'],
+                'output': row['output_column_name'],
+                'gold': row['gold_column_name']
+            })
 
 
 def load_all_test_data():

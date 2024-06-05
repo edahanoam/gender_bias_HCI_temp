@@ -1,7 +1,7 @@
 
 import streamlit as st
 
-AFTER_TEXT = """<After questionnaire text>.\n"""
+AFTER_TEXT = """Please take a moment to answer the following questionnaire on your experience with our models' translation capabilities.\n"""
 
 
 def next_page():
