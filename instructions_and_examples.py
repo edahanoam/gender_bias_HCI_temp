@@ -21,5 +21,6 @@ def next_page():
 def instructions_page():
     st.markdown(INSTRUCTIONS)
     #st.markdown(EXAMPLES)
-    st.button('Start training', key='next_button2', on_click=next_page)
+    #st.button('Start training', key='next_button2', on_click=next_page)
+    st.button('Start', key='next_button2', on_click=next_page)
 
