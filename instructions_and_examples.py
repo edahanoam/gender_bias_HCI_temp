@@ -14,7 +14,8 @@ EXAMPLES = """<Examples for the task>.\n"""
 
 
 def next_page():
-    st.session_state.cur_page = 'training'
+    #st.session_state.cur_page = 'training'
+    st.session_state.cur_page = 'experiment'
 
 
 def instructions_page():
