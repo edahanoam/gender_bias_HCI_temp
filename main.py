@@ -8,7 +8,7 @@ from experiment import experiment
 
 def init():
     st.set_page_config(layout="wide")
-    st.title('Machine-Translation Fixer Experiment')
+    st.title('Machine-Translation Evaluation')
     if 'cur_page' not in st.session_state:
         #st.session_state.cur_page = 'before'
         st.session_state.cur_page = 'instructions'
