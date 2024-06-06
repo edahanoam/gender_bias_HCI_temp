@@ -24,7 +24,7 @@ def csv_to_format():
                 'gold': row['gold']
             })
     random.shuffle(data_array)
-    return data_array
+    return data_array[:20]
 
 
 def load_all_test_data():
