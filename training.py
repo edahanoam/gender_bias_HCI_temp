@@ -33,9 +33,9 @@ def toggle_feedback():
 
 def show_feedback():
     if st.session_state.correct == 1:
-        st.success("You translation is correct!")
+        st.success("Your translation is correct!")
     else:
-        st.error("You translation is incorrect!")
+        st.error("Your translation is incorrect!")
     current_sample = st.session_state.training_data[st.session_state.training_sample_index]
     st.markdown(f"Original sentence: {current_sample['input']}")
     st.markdown(f"Model's suggested translation: {current_sample['output']}")
