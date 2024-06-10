@@ -19,7 +19,6 @@ def next_page():
 
 
 def instructions_page():
-    st.title('Machine-Translation Evaluation: Instructions')
     st.markdown(INSTRUCTIONS)
     #st.markdown(EXAMPLES)
     st.button('Start training', key='next_button2', on_click=next_page)
