@@ -47,7 +47,7 @@ def after_with_all_survey():
     st.radio('How satisfied are you with the experiment of using LLMs?',
              options=['1 - not at all', '2', '3', '4', '5 - completely satisfied'],
              key='llms_satisfy_before', index=None)
-    st.selectbox('Do you pay subscription to any LLM service?', key='llms_subscription', options=['yes', 'no'], index=None)
+    st.selectbox('Do you pay a subscription to any LLM service?', key='llms_subscription', options=['yes', 'no'], index=None)
     st.text_input('Which tasks do you use LLMs for?')
 
     st.selectbox('Age', key='age', options=['18-24', '25-34', '35-44', '45-54', '55-64', '65+'], index=None)
