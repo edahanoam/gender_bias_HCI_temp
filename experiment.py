@@ -10,7 +10,7 @@ def csv_to_format():
     data_array = []
 
     # Open the CSV file containing your data
-    with open('just_translations.csv', newline='', encoding='utf-8') as csvfile:
+    with open('short_translation_mine_translations.csv', newline='', encoding='utf-8') as csvfile:
         # Create a CSV reader object
         reader = csv.DictReader(csvfile)
 
