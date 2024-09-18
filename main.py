@@ -4,15 +4,24 @@ from before_questionnaire import before
 from instructions_and_examples import instructions_page
 from training import training
 from experiment import experiment
+import gspread
+import pandas as pd
+import pandas
 
 
 def init():
     st.set_page_config(layout="wide")
     st.title('Machine-Translation Evaluation')
+    if "ws" not in st.session_state:
+        gc = gspread.service_account_from_dict(st.secrets["credentials"])
+        sh = gc.open("short_translation_mine_translations")
+        st.session_state.ws = sh.worksheet('one')
+
     if 'cur_page' not in st.session_state:
         #st.session_state.cur_page = 'before'
         st.session_state.cur_page = 'instructions'
         # st.session_state.samples_csv = load()
+
 
 
 def load_page():

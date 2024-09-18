@@ -46,6 +46,7 @@ def next_sample():
 def experiment():
     if 'test_data' not in st.session_state:
         st.session_state.test_data = load_all_test_data()
+        #st.session_state.test_data=connect_to_spreadshit()
     if st.session_state.test_sample_index >= len(st.session_state.test_data):
         st.write('Testing is over!')
         st.button('Continue', key='next_button3', on_click=next_page)
