@@ -53,6 +53,8 @@ def load_all_test_data_from_spreadsheet():
             'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
         })
 
+    worksheet.update("R2", 'try')
+
     # Shuffle the data array to randomize
     random.shuffle(data_array)
 
