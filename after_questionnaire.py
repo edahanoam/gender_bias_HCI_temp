@@ -86,3 +86,4 @@ def demographics():
              options=['1 - not biased at all', '2', '3', '4', '5 - 100% biased'],
              key='llm_bias', index=None)
     st.text_area("Anything you want to tell us?", placeholder="Feel free to write any additional feedback or comments here...")
+    st.button('Finish', key='next_button1', on_click=next_page)
