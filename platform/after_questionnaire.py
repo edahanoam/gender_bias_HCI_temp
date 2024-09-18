@@ -3,6 +3,16 @@ import streamlit as st
 
 AFTER_TEXT = """Please take a moment to answer the following questionnaire on your experience with our models' translation capabilities.\n"""
 
+DEMOGRAPHICS =  '''
+<p><font size="4"> Please answer the following questions: </font> <br>
+           <br> Note:
+        <ul>
+        <li>The data will not be used for identification in any way.</li>
+        <li>Answering these questions is voluntary.</li>
+        <li>You can skip any question you do not wish to answer.</li>
+        </ul>
+'''
+
 
 def next_page():
     st.session_state.cur_page = 'finish'
@@ -55,3 +65,24 @@ def after_with_all_survey():
 
     st.button('Finish', key='next_button1', on_click=next_page)
 
+
+
+def demographics():
+    #the demographics
+    st.markdown(DEMOGRAPHICS, unsafe_allow_html=True)
+    st.selectbox('what is your age?', key='age', options=['18-24', '25-29','30-34','35-39', '40-44','45-49', '50-54','55-59','60-64','65-69','70-74','75-79','Above 79'], index=None)
+    st.selectbox('What is your gender?', key='gender', options=['Female','Male','Non-binary','Other','Prefer not to say'], index=None)
+    st.selectbox("""What is the highest degree or level of school you have completed? If currently enrolled, highest degree received.""" ,key='degree',options=['Less than a high school diploma','High school degree or equivalent','Bachelor\'s degree (e.g. BA, BS) ','Master\'s degree (e.g. MA, MS, MEd)','Doctorate','Other'], index=None)
+    st.selectbox("""What is your current employment status?""" ,key='employment',options=['Full-time employment','Part-time employment','Unemployed','Self-employed','Home-maker','Student','Retired'], index=None)
+    #LLMs
+
+    st.radio('How often do you use Large Language Models (LLMs) such as ChatGPT, GPT-4, or other AI tools in your daily life?',
+             options=['1 - never', '2', '3', '4', '5 - all the time'],
+             key='llms_usage', index=None)
+    st.radio('How satisfied are you with the translations produced by the model?',
+             options=['1 - not at all', '2', '3', '4', '5 - completely satisfied'],
+             key='llm_satisfy_after', index=None)
+    st.radio('How gender biased do you think that this LLM is?',
+             options=['1 - not biased at all', '2', '3', '4', '5 - 100% biased'],
+             key='llm_bias', index=None)
+    st.text_area("Anything you want to tell us?", placeholder="Feel free to write any additional feedback or comments here...")

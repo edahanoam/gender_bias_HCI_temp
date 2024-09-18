@@ -1,5 +1,5 @@
 import streamlit as st
-from after_questionnaire import after,after_with_all_survey
+from after_questionnaire import after_with_all_survey, demographics
 from before_questionnaire import before
 from instructions_and_examples import instructions_page
 from training import training
@@ -26,7 +26,8 @@ def load_page():
         experiment()
     elif st.session_state.cur_page == 'after':
         #after()
-        after_with_all_survey()
+        #after_with_all_survey()
+        demographics()
     elif st.session_state.cur_page == 'finish':
         st.write('Thank you for participating in the experiment!')
     else:

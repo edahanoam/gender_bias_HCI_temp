@@ -18,5 +18,4 @@ def display_single_example(current_sample, submit_button_callback):
 
 
 def save_annotation():
-    # todo
     pass
