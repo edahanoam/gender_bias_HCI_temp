@@ -34,6 +34,41 @@ def load_all_test_data():
     #return [sample_1]
     return data
 
+
+def load_all_test_data_from_spreadsheet():
+    st.session_state.test_sample_index = 0
+    data_array = []
+
+    worksheet = st.session_state.ws
+
+    # Fetch all data from the worksheet
+    data = worksheet.get_all_records()
+
+    # Loop through rows in the fetched data
+    for row in data:
+        # Each row is a dictionary with keys as column headers from your Google Sheet
+        data_array.append({
+            'input': row['sentence_text'],  # Ensure your column name matches the Google Sheets column name
+            'output': row['model_translations'],  # Ensure your column name matches the Google Sheets column name
+            'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
+        })
+
+    # Shuffle the data array to randomize
+    random.shuffle(data_array)
+
+    # Return only the first 20 items
+    return data_array[:20]
+
+
+
+
+
+def load_data_from_spreadsheet():
+    # Get all the data from the worksheet
+    data = st.session_state.ws.get_all_values()
+
+
+
 def next_page():
     st.session_state.cur_page = 'after'
 
@@ -45,8 +80,7 @@ def next_sample():
 
 def experiment():
     if 'test_data' not in st.session_state:
-        st.session_state.test_data = load_all_test_data()
-        #st.session_state.test_data=connect_to_spreadshit()
+        st.session_state.test_data = load_all_test_data_from_spreadsheet()
     if st.session_state.test_sample_index >= len(st.session_state.test_data):
         st.write('Testing is over!')
         st.button('Continue', key='next_button3', on_click=next_page)
