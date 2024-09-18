@@ -1,9 +1,9 @@
 import streamlit as st
-from platform.after_questionnaire import after_with_all_survey, demographics
-from platform.before_questionnaire import before
-from platform.instructions_and_examples import instructions_page
-from platform.training import training
-from platform.experiment import experiment
+from after_questionnaire import after_with_all_survey, demographics
+from before_questionnaire import before
+from instructions_and_examples import instructions_page
+from training import training
+from experiment import experiment
 
 
 def init():
