@@ -53,16 +53,14 @@ def load_all_test_data_from_spreadsheet():
             'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
         })
 
-    worksheet.update("R2", 'try')
+    worksheet.update("R2", [['try']])
     #TODO: add all of the correction, and make sure that each annotator get a seperated spread sheet. also i think that each of the annotators will get the sheet with the translation on each on
 
     # Shuffle the data array to randomize
     random.shuffle(data_array)
 
-    # Return only the first 20 items
+    # Return only the first 20 itemsK
     return data_array[:20]
-
-
 
 
 
