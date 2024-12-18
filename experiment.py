@@ -36,6 +36,7 @@ def load_all_test_data():
 
 
 def load_all_test_data_from_spreadsheet():
+    cur_letter ='R'
     st.session_state.test_sample_index = 0
     data_array = []
 
@@ -53,7 +54,7 @@ def load_all_test_data_from_spreadsheet():
             'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
         })
 
-    worksheet.update("R2", [['gggggggg']])
+    worksheet.update(f"{cur_letter}2", [['fffffff']])
     #TODO: add all of the correction, and make sure that each annotator get a seperated spread sheet. also i think that each of the annotators will get the sheet with the translation on each on
 
     # Shuffle the data array to randomize
