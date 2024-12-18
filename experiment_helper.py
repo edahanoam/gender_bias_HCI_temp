@@ -12,7 +12,7 @@ def display_single_example(current_sample, submit_button_callback):
     st.markdown(f'<p style="background-color:#F0FFFF;border-radius:2%;">{current_sample["input"]}</p>',
                 unsafe_allow_html=True)
     user_translation = st.text_input('Suggested translation (edit here)', key='training_translation', value=current_sample['output'])
-    st.button('Submit', key='submit_training', on_click=submit_button_callback(user_translation))
+    st.button('Submit', key='submit_training', on_click=lambda:submit_button_callback(user_translation))
     with st.popover("Display original suggested translation"):
         st.write(f"Model's original suggested translation:\n{current_sample['output']}")
 
