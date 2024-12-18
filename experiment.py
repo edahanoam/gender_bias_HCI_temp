@@ -73,7 +73,7 @@ def next_page():
     st.session_state.cur_page = 'after'
 
 
-def next_sample(translation,):
+def next_sample(translation):
     cur_letter ='R'
     worksheet = st.session_state.ws
     place = 'R'+str(2)
