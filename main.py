@@ -30,8 +30,8 @@ def load_page():
     elif st.session_state.cur_page == 'instructions':
         instructions_page()
     elif st.session_state.cur_page == 'training':
-        training()
-    elif st.session_state.cur_page == 'experiment':
+        #training()
+    #elif st.session_state.cur_page == 'experiment':
         experiment()
     elif st.session_state.cur_page == 'after':
         #after()
