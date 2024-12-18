@@ -54,11 +54,10 @@ def load_all_test_data_from_spreadsheet():
             'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
         })
 
-    worksheet.update(f"{cur_letter}2", [['fffffff']])
-    #TODO: add all of the correction, and make sure that each annotator get a seperated spread sheet. also i think that each of the annotators will get the sheet with the translation on each on
 
     # Shuffle the data array to randomize
-    random.shuffle(data_array)
+    #random.shuffle(data_array)
+    #TODO: add all of the correction, and make sure that each annotator get a seperated spread sheet. also i think that each of the annotators will get the sheet with the translation on each on
 
     # Return only the first 20 itemsK
     return data_array[:20]
@@ -75,9 +74,10 @@ def next_page():
     st.session_state.cur_page = 'after'
 
 
-def next_sample():
+def next_sample(translation):
+    worksheet.update(f"{cur_letter}{st.session_state.test_sample_index}", [[translation]])
     st.session_state.test_sample_index += 1
-    save_annotation()
+
 
 
 def experiment():
