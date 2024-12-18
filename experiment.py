@@ -36,7 +36,6 @@ def load_all_test_data():
 
 
 def load_all_test_data_from_spreadsheet():
-    cur_letter ='R'
     st.session_state.test_sample_index = 0
     data_array = []
 
@@ -75,6 +74,7 @@ def next_page():
 
 
 def next_sample(translation):
+    cur_letter ='R'
     worksheet = st.session_state.ws
     worksheet.update(f"{cur_letter}{st.session_state.test_sample_index}", [[f"{translation}"]])
     st.session_state.test_sample_index += 1
