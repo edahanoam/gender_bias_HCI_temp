@@ -11,7 +11,7 @@ import pandas
 
 valid_usernames = ['1','2','3','4','5','6','7','8','9','10']
 def sign_in():
-    st.header('Machine-Translation Evaluation')
+    #st.header('Machine-Translation Evaluation')
     st.markdown('Hello! Please enter your username')
     st.text_input('Username', key='username_box')
 
