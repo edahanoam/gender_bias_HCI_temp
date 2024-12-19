@@ -1,5 +1,5 @@
 import streamlit as st
-from after_questionnaire import after_with_all_survey, demographics
+from after_questionnaire import demographics
 from before_questionnaire import before
 from instructions_and_examples import instructions_page
 from training import training
