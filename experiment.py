@@ -77,8 +77,8 @@ def next_sample(translation):
     cur_letter ='R'
     worksheet = st.session_state.ws
 
-    place = 'R'+str(st.session_state.test_sample_index)
-    worksheet.update(place, [[translation]])
+    place = 'R2'
+    worksheet.update(place, [[str(st.session_state.test_sample_index)]])
     st.session_state.test_sample_index += 1
 
 
