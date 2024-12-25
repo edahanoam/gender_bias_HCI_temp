@@ -21,7 +21,7 @@ def csv_to_format():
             data_array.append({
                 'input': row['sentence_text'],
                 'output': row['model_translations'],
-                'gold': row['gold']
+                #'gold': row['gold']
             })
     random.shuffle(data_array)
     return data_array[:20]
@@ -50,7 +50,7 @@ def load_all_test_data_from_spreadsheet():
         data_array.append({
             'input': row['sentence_text'],  # Ensure your column name matches the Google Sheets column name
             'output': row['model_translations'],  # Ensure your column name matches the Google Sheets column name
-            'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
+            #'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
         })
 
 
