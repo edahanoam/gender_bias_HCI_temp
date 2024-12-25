@@ -74,10 +74,9 @@ def next_page():
 
 
 def next_sample(translation):
-    cur_letter ='R'
     worksheet = st.session_state.ws
     # +2 as the index starts at 1 in spreadsheets and 1 is the header
-    place = 'R'+str(st.session_state.test_sample_index+2)
+    place = 'F'+str(st.session_state.test_sample_index+2)
     worksheet.update(place, [[translation]])
     st.session_state.test_sample_index += 1
 
