@@ -10,6 +10,7 @@ import pandas
 
 
 valid_usernames = ['1','2','3','4','5','6','7','8','9','10']
+assign_dictionary = {'1':'65.1', '2':'65.2', '3':'75.1', '4':'75.2', '5':'85.1', '6':'85.2', '7':'95.1', '8':'95.2','9':'100.1', '10':'100.2'}
 def sign_in():
     #st.header('Machine-Translation Evaluation')
     st.markdown('Hello! Please enter your username')
@@ -26,7 +27,7 @@ def record_name():
         if "ws" not in st.session_state:
             gc = gspread.service_account_from_dict(st.secrets["credentials"])
             sh = gc.open("short_translation_mine_translations")
-            st.session_state.ws = sh.worksheet(f"{st.session_state.username_box}")
+            st.session_state.ws = sh.worksheet(f"{assign_dictionary[st.session_state.username_box]}")
             st.session_state.cur_page ='training'
 
 
