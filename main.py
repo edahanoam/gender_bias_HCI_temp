@@ -7,6 +7,7 @@ from experiment import experiment
 import gspread
 import pandas as pd
 import pandas
+import time
 
 
 valid_usernames = ['1','2','3','4','5','6','7','8','9','10','test']

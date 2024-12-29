@@ -1,5 +1,6 @@
 
 import streamlit as st
+import time
 
 AFTER_TEXT = """Please take a moment to answer the following questionnaire on your experience with our models' translation capabilities.\n"""
 
