@@ -43,12 +43,12 @@ def load_all_test_data_from_spreadsheet():
 
     # Fetch all data from the worksheet
     data = worksheet.get_all_records()
-
     # Loop through rows in the fetched data
     for row in data:
+
         # Each row is a dictionary with keys as column headers from your Google Sheet
         data_array.append({
-            'input': row['sentence_text'],  # Ensure your column name matches the Google Sheets column name
+            'input': row['sentence_text'].rstrip('.'),  # Ensure your column name matches the Google Sheets column name
             'output': row['model_translations'],  # Ensure your column name matches the Google Sheets column name
             #'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
         })
