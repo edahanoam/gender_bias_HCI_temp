@@ -5,7 +5,7 @@ from instructions_and_examples import INSTRUCTIONS
 
 
 def display_single_example(current_sample, submit_button_callback):
-    with st.columns([1, 2])[0]:
+    with st.columns([1, 2, 1])[1]:
         with st.popover("Instructions"):
             st.write(INSTRUCTIONS)
         st.markdown('Fix the suggested translation for the following sentence, if necessary:')
