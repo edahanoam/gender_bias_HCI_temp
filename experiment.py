@@ -86,8 +86,9 @@ def experiment():
     if 'test_data' not in st.session_state:
         st.session_state.test_data = load_all_test_data_from_spreadsheet()
     if st.session_state.test_sample_index >= len(st.session_state.test_data):
-        st.write('Testing is over!')
-        st.button('Continue', key='next_button3', on_click=next_page)
+        with st.columns([1, 2, 1])[1]:
+            st.write('Testing is over!')
+            st.button('Continue', key='next_button3', on_click=next_page)
     else:
         current_sample = st.session_state.test_data[st.session_state.test_sample_index]
         display_single_example(current_sample, next_sample)
