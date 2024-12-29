@@ -91,5 +91,6 @@ def demographics():
 
 def next_page(age, gender, degree, employment, usage, satisfaction, biased, comments):
     st.session_state.ws.append_row([age,gender,degree,employment,usage, satisfaction,biased,comments])
+    st.session_state.ws.append_row([f"Time took to all examples: {time.time() - st.session_state.ws.start_time}"])
 
     st.session_state.cur_page = 'finish'

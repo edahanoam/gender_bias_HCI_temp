@@ -43,7 +43,7 @@ def init():
         #st.session_state.cur_page = 'before'
         #st.session_state.cur_page = 'instructions'
         st.session_state.cur_page = 'sign_in'
-
+        st.session_state.start_time = time.time()
         # st.session_state.samples_csv = load()
 
 
