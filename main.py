@@ -64,7 +64,8 @@ def load_page():
         #after_with_all_survey()
         demographics()
     elif st.session_state.cur_page == 'finish':
-        st.write('Thank you for participating in the experiment!')
+        with st.columns([1, 2, 1])[1]:
+            st.write('Thank you for participating in the experiment!')
     else:
         st.error('Invalid page state')
 
