@@ -1,7 +1,7 @@
 
 import streamlit as st
 
-INSTRUCTIONS = """You should carry out a light post-editing (e.g. for internal communication). In light post-editing you need to ensure that the correct information is conveyed while accepting a more relaxed standard of fluency and style. For this reason you should post-edit the MT suggestion by applying the minimal edits required to transform the system output into a fluent sentence with the same meaning as the source sentence: 
+INSTRUCTIONS = """You should carry out a light post-editing (e.g. for internal communication). In light post-editing you need to ensure that the correct information is conveyed while accepting a more relaxed standard of fluency and style. For this reason you should post-edit the machine translation suggestion by applying the minimal edits required to transform the system output into a fluent sentence with the same meaning as the source sentence: 
 make only the necessary edits 
 do not make “preferential” edits aimed to adjust the style.
 
