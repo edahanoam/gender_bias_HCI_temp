@@ -10,7 +10,7 @@ import pandas
 
 
 valid_usernames = ['1','2','3','4','5','6','7','8','9','10','test']
-assign_dictionary = {'1':'65.1', '2':'65.2', '3':'75.1', '4':'75.2', '5':'85.1', '6':'85.2', '7':'95.1', '8':'95.2','9':'100.1', '10':'100.2','test':'from_bug'}
+assign_dictionary = {'5':'65.1', '8':'65.2', '3':'75.1', '10':'75.2', '1':'85.1', '6':'85.2', '7':'95.1', '2':'95.2','9':'100.1', '4':'100.2','test':'from_bug'}
 def sign_in():
     #st.header('Machine-Translation Evaluation')
     st.markdown('Hello! Please enter your username')
