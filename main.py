@@ -36,6 +36,16 @@ def record_name():
             sh = gc.open("short_translation_mine_translations")
             st.session_state.ws_answers = sh.worksheet("qualification_spanish_answers")
 
+        if "row" not in st.session_state:
+            row_count = 0
+            while True:
+                row_count += 1
+                row_values = st.session_state.ws_answers.row_values(row_count)
+                if not any(row_values):
+                    break
+
+            st.session_state.row=row_count
+
         st.session_state.cur_page = 'experiment'
 
 
