@@ -104,7 +104,7 @@ def validated():
         # Button to copy the text
         copy_button = f"""
         <button onclick='navigator.clipboard.writeText(`{token}`)'>
-          Copy Token
+          Copy Text
         </button>
         """
         st.markdown(copy_button, unsafe_allow_html=True)
