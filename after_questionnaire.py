@@ -100,12 +100,6 @@ def validated():
     with st.columns([1, 2, 1])[1]:
         token = hash(st.session_state.username + MY_CODE)
 
-        st.markdown(f'Thank you. Your token is: {token}')
-        # Button to copy the text
-        copy_button = f"""
-        <button onclick='navigator.clipboard.writeText(`{token}`)'>
-          Copy Text
-        </button>
-        """
-        st.markdown(copy_button, unsafe_allow_html=True)
+        st.markdown('Thank you. Your token is:')
+        st.markdown(f'{token}')
 
