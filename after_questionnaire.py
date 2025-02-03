@@ -98,6 +98,14 @@ def next_page(age, gender, degree, employment, usage, satisfaction, biased, comm
 
 def validated():
     with st.columns([1, 2, 1])[1]:
-        token = st.session_state.username + MY_CODE
+        token = hash(st.session_state.username + MY_CODE)
 
-        st.markdown(f'Thank you. Your token is: {hash(token)}')
+        st.markdown(f'Thank you. Your token is: {token}')
+        # Button to copy the text
+        copy_button = f"""
+        <button onclick='navigator.clipboard.writeText(`{token}`)'>
+          Copy Token
+        </button>
+        """
+        st.markdown(copy_button, unsafe_allow_html=True)
+
