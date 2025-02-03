@@ -85,9 +85,8 @@ def next_sample_qualification(original_sentence,translation):
 
     worksheet = st.session_state.ws_answers
     column = chr(st.session_state.test_sample_index+ 64)
-    # +2 as the index starts at 1 in spreadsheets and 1 is the header
 
-    place = column+str(st.session_state.row)
+    place = str(column)+str(st.session_state.row)
     worksheet.update(place, [[to_save]])
     st.session_state.test_sample_index += 1
 
