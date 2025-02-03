@@ -1,5 +1,5 @@
 import streamlit as st
-from after_questionnaire import validate
+from after_questionnaire import validated
 from before_questionnaire import before
 from instructions_and_examples import instructions_page
 from training import training
@@ -64,7 +64,7 @@ def load_page():
         #after()
         #after_with_all_survey()
         #demographics()
-        validate()
+        validated()
     elif st.session_state.cur_page == 'finish':
         with st.columns([1, 2, 1])[1]:
             st.write('Thank you for participating in the experiment!')
