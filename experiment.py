@@ -87,7 +87,7 @@ def next_sample_qualification(original_sentence,translation):
     column = chr(st.session_state.test_sample_index+ 66)
 
     place = str(column)+str(st.session_state.row)
-    worksheet.update(place, [to_save])
+    worksheet.update(place, [[to_save]])
     st.session_state.test_sample_index += 1
 
 
