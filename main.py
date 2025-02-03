@@ -45,7 +45,7 @@ def record_name():
                     break
 
             place = 'A' + str(row_count)
-            st.session_state.ws_answers.update(place, [st.session_state.username])
+            st.session_state.ws_answers.update(place, st.session_state.username)
             st.session_state.row=row_count
 
         st.session_state.cur_page = 'experiment'
