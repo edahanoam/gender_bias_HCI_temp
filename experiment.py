@@ -108,6 +108,7 @@ def load_all_test_data_qualification():
             # Ensure your column name matches the Google Sheets column name
             # 'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
         })
+    random.shuffle(data_array)
     return data_array
 
 
