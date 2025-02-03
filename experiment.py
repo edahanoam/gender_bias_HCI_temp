@@ -81,6 +81,38 @@ def next_sample(translation):
     st.session_state.test_sample_index += 1
 
 
+def load_all_test_data_qualification():
+    st.session_state.test_sample_index = 0
+    data_array = []
+
+    worksheet = st.session_state.ws_sentences
+
+    # Fetch all data from the worksheet
+    data = worksheet.get_all_records()
+    # Loop through rows in the fetched data
+    for row in data:
+        # Each row is a dictionary with keys as column headers from your Google Sheet
+        data_array.append({
+            'input': row['origial sentence'].rstrip('.'),  # Ensure your column name matches the Google Sheets column name
+            'output': row['gold translation '].rstrip('.'),
+            # Ensure your column name matches the Google Sheets column name
+            # 'gold': row['gold']  # Ensure your column name matches the Google Sheets column name
+        })
+    return data_array
+
+
+
+def qualification():
+    if 'test_data' not in st.session_state:
+        st.session_state.test_data = load_all_test_data_qualification()
+    if st.session_state.test_sample_index >= len(st.session_state.test_data):
+        with st.columns([1, 2, 1])[1]:
+            st.write('Testing is over!')
+            st.button('Continue', key='next_button3', on_click=next_page)
+    else:
+        current_sample = st.session_state.test_data[st.session_state.test_sample_index]
+        display_single_example(current_sample, next_sample)
+
 
 def experiment():
     if 'test_data' not in st.session_state:

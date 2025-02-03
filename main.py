@@ -3,7 +3,7 @@ from after_questionnaire import validated
 from before_questionnaire import before
 from instructions_and_examples import instructions_page
 from training import training
-from experiment import experiment
+from experiment import experiment, qualification
 import gspread
 import pandas as pd
 import pandas
@@ -26,12 +26,17 @@ def record_name():
         st.error('You must enter a valid Worker ID')
     else:
         st.session_state.username = st.session_state.username_box
-        if "ws" not in st.session_state:
+        if "ws_sentences" not in st.session_state:
             gc = gspread.service_account_from_dict(st.secrets["credentials"])
             sh = gc.open("short_translation_mine_translations")
-            st.session_state.ws = sh.worksheet(f"{assign_dictionary[st.session_state.username_box]}")
-            st.session_state.cur_page ='experiment'
+            st.session_state.ws_sentences = sh.worksheet("qualification_spanish_sentences")
 
+        if "ws_answers" not in st.session_state:
+            gc = gspread.service_account_from_dict(st.secrets["credentials"])
+            sh = gc.open("short_translation_mine_translations")
+            st.session_state.ws_answers = sh.worksheet("qualification_spanish_answers")
+
+        st.session_state.cur_page = 'experiment'
 
 
 def init():
@@ -59,7 +64,8 @@ def load_page():
     # elif st.session_state.cur_page == 'training':
     #     #training()
     elif st.session_state.cur_page == 'experiment':
-        experiment()
+        #experiment()
+        qualification()
     elif st.session_state.cur_page == 'after':
         #after()
         #after_with_all_survey()
