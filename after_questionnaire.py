@@ -14,7 +14,7 @@ DEMOGRAPHICS =  '''
         </ul>
 '''
 
-
+MY_CODE ="AF567"
 
 
 # def after():
@@ -89,9 +89,14 @@ def demographics():
         st.button('Finish', key='next_button1', on_click=lambda:next_page(age, gender, degree, employment, usage, satisfaction, biased, comments))
 
 
-
 def next_page(age, gender, degree, employment, usage, satisfaction, biased, comments):
     st.session_state.ws.append_row([age,gender,degree,employment,usage, satisfaction,biased,comments])
     st.session_state.ws.append_row([f"Time took to all examples: {time.time() - st.session_state.start_time} seconds"])
 
     st.session_state.cur_page = 'finish'
+
+
+def validated():
+    token = st.session_state.username_box + MY_CODE
+
+    st.markdown(f'Thank you. Your token is: {hash(token)}')
