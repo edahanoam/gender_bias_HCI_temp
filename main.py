@@ -44,6 +44,8 @@ def record_name():
                 if not any(row_values):
                     break
 
+            place = 'A' + str(row_count)
+            st.session_state.ws_answers.update(place, st.session_state.username)
             st.session_state.row=row_count
 
         st.session_state.cur_page = 'experiment'

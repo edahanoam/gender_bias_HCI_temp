@@ -81,10 +81,10 @@ def next_sample(translation):
     st.session_state.test_sample_index += 1
 
 def next_sample_qualification(original_sentence,translation):
-    to_save = [original_sentence, translation]
+    to_save = f"{original_sentence} | {translation}"
 
     worksheet = st.session_state.ws_answers
-    column = chr(st.session_state.test_sample_index+ 65)
+    column = chr(st.session_state.test_sample_index+ 66)
 
     place = str(column)+str(st.session_state.row)
     worksheet.update(place, [to_save])
