@@ -97,6 +97,6 @@ def next_page(age, gender, degree, employment, usage, satisfaction, biased, comm
 
 
 def validated():
-    token = st.session_state.username_box + MY_CODE
+    token = st.session_state.username + MY_CODE
 
     st.markdown(f'Thank you. Your token is: {hash(token)}')
